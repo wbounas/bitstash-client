@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    development: 'http://localHost:7165',
+    development: 'http://localhost:7165',
     production: 'https://desolate-eyrie-66077.herokuapp.com/'
   }
 }
