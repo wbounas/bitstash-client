@@ -12,9 +12,9 @@ const createUpload = function (event) {
   const data = getFormFields(event.target)
   console.log(data)
   // console.log('The data is ', data.get('image[file]'))
-  // uploadApi.createMulti(data)
-  //   .then(uploadUi.success)
-  //   .catch(uploadUi.error)
+  api.createFile(data)
+    .then(ui.createFileSuccess)
+    .catch(ui.createFileFailure)
 }
 
 const addHandlers = function () {
