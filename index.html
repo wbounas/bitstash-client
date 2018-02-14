@@ -11,8 +11,8 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container">
-      <nav class="navbar navbar-inverse flex-container"> <!-- navbar-default -->
+    <body>
+      <nav class="navbar navbar-inverse flex-container" style="border-radius: 0;"> <!-- navbar-default -->
         <div class="container-fluid row">
 
             <a class="navbar-brand navbar-nav navbar-collapse flex-item" href="#">
@@ -21,7 +21,7 @@
 
         </div>
       </nav>
-
+        <div class="container">
           <form id="sign-up" class="logged-out">
             <fieldset>
               <legend>Sign up!</legend>
@@ -54,41 +54,42 @@
             </fieldset>
           </form>
 
-      <div id="uiFeedback"> </div>
+          <div id="uiFeedback"> </div>
 
 
-      <hr>
+          <hr>
 
-      <form id="application-x-www-form-data" action="http://httpbin.org/post" method="post">
-        <fieldset>
-          <legend>enctype unset</legend>
-          <label>
-            Title
-            <input type="text" name="image[title]">
-          </label>
-          <label>
-            Image
-            <input type="file" name="image[file]">
-          </label>
-          <input type="submit" name="submit" value="Upload">
-        </fieldset>
-      </form>
-      <form id="multipart-form-data" method="post" enctype="multipart/form-data">
-        <fieldset>
-          <legend>enctype="multipart/form-data"</legend>
-          <label>
-            Title
-            <input type="text" name="image[title]">
-          </label>
-          <label>
-            Image
-            <input type="file" name="image[file]">
-          </label>
-          <input type="submit" name="submit" value="Upload">
-        </fieldset>
-      </form>
+          <form id="application-x-www-form-data" action="http://httpbin.org/post" method="post">
+            <fieldset>
+              <legend>enctype unset</legend>
+              <label>
+                Title
+                <input type="text" name="image[title]">
+              </label>
+              <label>
+                Image
+                <input type="file" name="image[file]">
+              </label>
+              <input type="submit" name="submit" value="Upload">
+            </fieldset>
+          </form>
+          <form id="multipart-form-data" method="post" enctype="multipart/form-data">
+            <fieldset>
+              <legend>enctype="multipart/form-data"</legend>
+              <label>
+                Title
+                <input type="text" name="image[title]">
+              </label>
+              <label>
+                Image
+                <input type="file" name="image[file]">
+              </label>
+              <input type="submit" name="submit" value="Upload">
+            </fieldset>
+          </form>
 
-      <div class="table-div" id="table-div">
-      </div>
+          <div class="table-div" id="table-div">
+          </div>
+        </div>
     </body>
 </html>
