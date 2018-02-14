@@ -7,8 +7,11 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
-  // console.log('events', data)
+  console.log('form data is: ', data)
   event.preventDefault()
+  if (data.password !== data.password_confirmation) {
+    return ui.signUpFailure()
+  }
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
