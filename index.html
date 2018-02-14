@@ -11,9 +11,18 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <div id="uiFeedback"> </div>
-      <form id="sign-up" class="logged-out">
+    <body>
+      <nav class="navbar navbar-inverse flex-container" style="border-radius: 0;"> <!-- navbar-default -->
+        <div class="container-fluid row">
+
+            <a class="navbar-brand navbar-nav navbar-collapse flex-item" href="#">
+              BitStash
+            </a>
+
+        </div>
+      </nav>
+        <div class="container">
+          <form id="sign-up" class="logged-out">
             <fieldset>
               <legend>Sign up!</legend>
               <input type="text" name="credentials[email]" placeholder="Enter Email">
@@ -45,7 +54,8 @@
             </fieldset>
           </form>
 
-      <hr>
+          <div id="uiFeedback"> </div>
+
 
       <!-- <form id="application-x-www-form-data" action="http://httpbin.org/post" method="post">
         <fieldset>
@@ -76,7 +86,8 @@
         </fieldset>
       </form>
 
-      <div class="table-div" id="table-div">
-      </div>
+          <div class="table-div" id="table-div">
+          </div>
+        </div>
     </body>
 </html>
