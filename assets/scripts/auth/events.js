@@ -9,6 +9,9 @@ const onSignUp = function (event) {
   const data = getFormFields(this)
   // console.log('events', data)
   event.preventDefault()
+  if (data.password !== data.password_confirmation) {
+    return ui.signUpFailure()
+  }
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)

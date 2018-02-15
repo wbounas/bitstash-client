@@ -11,9 +11,18 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <div id="uiFeedback"> </div>
-      <form id="sign-up" class="logged-out">
+    <body>
+      <nav class="navbar navbar-inverse flex-container" style="border-radius: 0;"> <!-- navbar-default -->
+        <div class="container-fluid row">
+
+            <a class="navbar-brand navbar-nav navbar-collapse flex-item" href="#">
+              BitStash
+            </a>
+
+        </div>
+      </nav>
+        <div class="container">
+          <form id="sign-up" class="logged-out">
             <fieldset>
               <legend>Sign up!</legend>
               <input type="text" name="credentials[email]" placeholder="Enter Email">
@@ -45,9 +54,16 @@
             </fieldset>
           </form>
 
+<<<<<<< HEAD
       <hr>
 
       <form id="application-x-www-form-data" action="http://httpbin.org/post" method="post">
+=======
+          <div id="uiFeedback"> </div>
+
+
+      <!-- <form id="application-x-www-form-data" action="http://httpbin.org/post" method="post">
+>>>>>>> development
         <fieldset>
           <legend>enctype unset</legend>
           <label>
@@ -60,6 +76,7 @@
           </label>
           <input type="submit" name="submit" value="Upload">
         </fieldset>
+<<<<<<< HEAD
       </form>
       <form id="multipart-form-data" method="post" enctype="multipart/form-data">
         <fieldset>
@@ -71,9 +88,30 @@
           <label>
             Image
             <input type="file" name="image[file]">
+=======
+      </form> -->
+      <form id="multipart-form-data" enctype="multipart/form-data">
+        <fieldset>
+          <legend>enctype="multipart/form-data"</legend>
+          <label>
+            Name
+            <input type="text" name="file[name]">
+          </label>
+          <input type="hidden" name="user[_id]" value="" id="hidden-user-id">
+          <label>
+            Image
+            <input type="file" name="file[path]">
+>>>>>>> development
           </label>
           <input type="submit" name="submit" value="Upload">
         </fieldset>
       </form>
+<<<<<<< HEAD
+=======
+
+          <div class="table-div" id="table-div">
+          </div>
+        </div>
+>>>>>>> development
     </body>
 </html>
