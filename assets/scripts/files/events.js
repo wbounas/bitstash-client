@@ -54,6 +54,7 @@ const onUpdateFile = function (event) {
   // console.log('event tearget:', event.target)
   // console.log('this:', this)
 
+// THIS WILL FORCE A COMMIT
   const fileData = {}
   fileData.id = $('.update-file-btn').data('file-id')
   // console.log('this is the fileData', fileData)
