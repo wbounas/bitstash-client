@@ -22,7 +22,8 @@ const signInSuccess = function (data) {
   // $('.game-functionality').removeClass('hide')
   // $('.logged-out').addClass('hide')
   store.user = data.user
-  // console.log('the stored data', store)
+  $('#hidden-user-id').attr('value', store.user._id)
+  console.log('the stored user.id', store.user._id)
 }
 
 const signInFailure = function (data) {
