@@ -28,7 +28,43 @@ const getAllFiles = function (data) {
   })
 }
 
+const getOneFile = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/files/' + data.file.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const updateFile = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/files/' + data.file.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deleteFile = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/files/' + data.file.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createFile,
-  getAllFiles
+  getAllFiles,
+  getOneFile,
+  updateFile,
+  deleteFile
 }

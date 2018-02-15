@@ -13,7 +13,54 @@ const createFileFailure = function () {
   $('#uiFeedback').css('color', 'red')
 }
 
+const getAllFilesSuccess = function (data) {
+  console.log(data)
+}
+
+const getAllFilesFailure = function (error) {
+  console.log(error)
+}
+
+const getOneFileSuccess = function (data) {
+  console.log(data)
+}
+
+const getOneFileFailure = function (error) {
+  console.log(error)
+}
+
+const updateFileSuccess = function (data) {
+  console.log(data)
+}
+
+const updateFileFailure = function (error) {
+  console.log(error)
+}
+
+const deleteFileSuccess = function (data) {
+  console.log(data)
+}
+
+const deleteFileFailure = function (error) {
+  console.log(error)
+}
+
 module.exports = {
   createFileSuccess,
-  createFileFailure
+  createFileFailure,
+  getAllFilesSuccess,
+  getAllFilesFailure,
+  getOneFileSuccess,
+  getOneFileFailure,
+  updateFileSuccess,
+  updateFileFailure,
+  deleteFileSuccess,
+  deleteFileFailure
 }
+
+//
+// createFile,
+// getAllFiles,
+// getOneFile,
+// updateFile,
+// deleteFile
