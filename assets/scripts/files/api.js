@@ -6,7 +6,7 @@ const store = require('../store')
 const createFile = function (data) {
   console.log('data for ajax is: ', data)
   return $.ajax({
-    url: 'http://localhost:4741/files',
+    url: config.apiOrigin + '/files',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -17,6 +17,18 @@ const createFile = function (data) {
   })
 }
 
+const getAllFiles = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/files',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
-  createFile
+  createFile,
+  getAllFiles
 }
