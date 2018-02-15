@@ -10,7 +10,7 @@ const createUpload = function (event) {
   event.preventDefault()
   // console.log('this is the event.target', event.target)
   const data = new FormData(event.target)
-  data.user = store.user
+  // data.user = store.user
   // const data = getFormFields(event.target)
   console.log('store.user:', store.user)
   console.log('this is data: ', data)

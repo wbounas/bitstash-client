@@ -2,9 +2,10 @@
 
 const store = require('../store')
 
-const createFileSuccess = function () {
+const createFileSuccess = function (data) {
   $('#uiFeedback').text('Uploaded file!')
   $('#uiFeedback').css('color', 'green')
+  console.log('JSON from succesful AJAX:', data)
 }
 
 const createFileFailure = function () {
