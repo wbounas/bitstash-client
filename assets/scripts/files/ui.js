@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const indexFiles = require('../templates/index-files.handlebars')
 
 const createFileSuccess = function (data) {
   $('#uiFeedback').text('Uploaded file!')
@@ -14,7 +15,9 @@ const createFileFailure = function () {
 }
 
 const getAllFilesSuccess = function (data) {
-  console.log(data)
+  console.log('getAllFilesSuccess data is:', data)
+  const indexFilesHTML = indexFiles({ files: data.files })
+  $('#files-display-container').html(indexFilesHTML)
 }
 
 const getAllFilesFailure = function (error) {

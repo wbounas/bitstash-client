@@ -18,6 +18,7 @@ const createFile = function (data) {
 }
 
 const getAllFiles = function (data) {
+  console.log('data inside of getAllFiles is:', data)
   return $.ajax({
     url: config.apiOrigin + '/files',
     method: 'GET',
