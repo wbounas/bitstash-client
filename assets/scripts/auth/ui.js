@@ -4,20 +4,20 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   // console.log(data)
-  $('#uiFeedback').text('Successfully signed up!')
-  $('#uiFeedback').css('color', 'green')
+  $('.uiFeedback').text('Successfully signed up!')
+  $('.uiFeedback').css('color', 'green')
 }
 
 const signUpFailure = function (data) {
   // console.error(error)
-  $('#uiFeedback').text('Sign up failed!')
-  $('#uiFeedback').css('color', 'red')
+  $('.uiFeedback').text('Sign up failed!')
+  $('.uiFeedback').css('color', 'red')
 }
 
 const signInSuccess = function (data) {
   // console.log(data)
-  $('#uiFeedback').text('Successfully signed in!')
-  $('#uiFeedback').css('color', 'green')
+  $('.uiFeedback').text('Successfully signed in!')
+  $('.uiFeedback').css('color', 'green')
   // $('.logged-in').removeClass('hide')
   // $('.game-functionality').removeClass('hide')
   // $('.logged-out').addClass('hide')
@@ -30,26 +30,26 @@ const signInSuccess = function (data) {
 
 const signInFailure = function (data) {
   // console.error(error)
-  $('#uiFeedback').text('Sign in failed!')
-  $('#uiFeedback').css('color', 'red')
+  $('.uiFeedback').text('Sign in failed!')
+  $('.uiFeedback').css('color', 'red')
 }
 
 const changePasswordSuccess = function (data) {
   // console.log('Changed password!')
-  $('#uiFeedback').text('Changed password!')
-  $('#uiFeedback').css('color', 'green')
+  $('.uiFeedback').text('Changed password!')
+  $('.uiFeedback').css('color', 'green')
 }
 
 const changePasswordFailure = function (data) {
   // console.error(error)
-  $('#uiFeedback').text('Error changing password!')
-  $('#uiFeedback').css('color', 'red')
+  $('.uiFeedback').text('Error changing password!')
+  $('.uiFeedback').css('color', 'red')
 }
 
 const signOutSuccess = function () {
   // console.log('Signed out!')
-  $('#uiFeedback').text('Signed out!')
-  $('#uiFeedback').css('color', 'green')
+  $('.uiFeedback').text('Signed out!')
+  $('.uiFeedback').css('color', 'green')
   // $('.logged-in').addClass('hide')
   // $('.game-functionality').addClass('hide')
   // $('.game-board').addClass('hide')
@@ -62,8 +62,8 @@ const signOutSuccess = function () {
 }
 
 const signOutFailure = function () {
-  $('#uiFeedback').text('Failed signing out!')
-  $('#uiFeedback').css('color', 'red')
+  $('.uiFeedback').text('Failed signing out!')
+  $('.uiFeedback').css('color', 'red')
 }
 
 // on document ready, hide `.signed-in-content` <div>
