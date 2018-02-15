@@ -41,11 +41,14 @@ const onGetOneFile = function (event) {
 }
 
 const searchForFile = function (fileDataObj) {
+  let foundObject
   store.files.find(element => {
     if (element.id === fileDataObj.id) {
       console.log('found the file:', element)
+      foundObject = element
     }
   })
+  return foundObject
 }
 
 const onUpdateFile = function (event) {
@@ -54,13 +57,14 @@ const onUpdateFile = function (event) {
   // console.log('event tearget:', event.target)
   // console.log('this:', this)
 
-// THIS WILL FORCE A COMMIT
-  const fileData = {}
-  fileData.id = $('.update-file-btn').data('file-id')
+  const searchObject = {}
+  searchObject.id = $('.update-file-btn').data('file-id')
+  const fileData = searchForFile(searchObject)
   // console.log('this is the fileData', fileData)
-  console.log('store files:', store.files)
-  searchForFile(fileData)
-  api.updateFile(data)
+  // console.log('store files:', store.files)
+  console.log('fileData:', fileData)
+
+  api.updateFile(fileData)
     .then(ui.updateFileSuccess)
     .catch(ui.updateFileFailure)
 }

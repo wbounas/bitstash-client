@@ -42,7 +42,7 @@ const getOneFile = function (data) {
 
 const updateFile = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/files/' + data.file.id,
+    url: config.apiOrigin + '/files/' + data.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
