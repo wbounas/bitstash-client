@@ -18,8 +18,8 @@
     <td data-size="{{file.file_size}}"> {{file.file_size}} </td>
     <td data-url="{{file.url}}"> {{file.url}} </td>
     <td data-tags="{{file.tags}}"> {{file.tags}} </td>
-    <td><button type="button" class="btn btn-warning update-btn"> Update </button></td>
-    <td><button type="button" class="btn btn-danger remove-ing"> Remove </button></td>
+    <td><button type="button" class="btn btn-warning update-file-btn" data-file-id="{{file.id}}"> Update </button></td>
+    <td><button type="button" class="btn btn-danger remove-file-btn"> Remove </button></td>
   </tr>
   {{/each}}
 </tbody>

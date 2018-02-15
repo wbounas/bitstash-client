@@ -40,10 +40,25 @@ const onGetOneFile = function (event) {
     .catch(ui.getOneFileFailure)
 }
 
+const searchForFile = function (fileDataObj) {
+  store.files.find(element => {
+    if (element.id === fileDataObj.id) {
+      console.log('found the file:', element)
+    }
+  })
+}
+
 const onUpdateFile = function (event) {
   event.preventDefault()
-  // console.log('this is the event.target', event.target)
-  const data = getFormFields(event.target)
+  // const data = getFormFields(event.target)
+  // console.log('event tearget:', event.target)
+  // console.log('this:', this)
+
+  const fileData = {}
+  fileData.id = $('.update-file-btn').data('file-id')
+  // console.log('this is the fileData', fileData)
+  console.log('store files:', store.files)
+  searchForFile(fileData)
   api.updateFile(data)
     .then(ui.updateFileSuccess)
     .catch(ui.updateFileFailure)
@@ -60,6 +75,7 @@ const onDeleteFile = function (event) {
 
 const addHandlers = function () {
   $('#multipart-form-data').on('submit', onCreateFile)
+  $('#files-display-container').on('click', '.update-file-btn', onUpdateFile)
 }
 
 module.exports = {

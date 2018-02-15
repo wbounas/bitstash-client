@@ -15,6 +15,8 @@ const createFileFailure = function () {
 }
 
 const getAllFilesSuccess = function (data) {
+  // save all files from the request to the local store
+  store.files = data.files
   console.log('getAllFilesSuccess data is:', data)
   const indexFilesHTML = indexFiles({ files: data.files })
   $('#files-display-container').html(indexFilesHTML)
