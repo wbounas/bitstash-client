@@ -24,6 +24,8 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('#hidden-user-id').attr('value', store.user._id)
   console.log('the stored user.id', store.user._id)
+  $('.landing-content').hide()
+  $('.signed-in-content').show()
 }
 
 const signInFailure = function (data) {
@@ -55,12 +57,19 @@ const signOutSuccess = function () {
   // $('.game-search').addClass('hide')
   // $('.games-search').addClass('hide')
   store.user = null
+  $('.signed-in-content').hide()
+  $('.landing-content').show()
 }
 
 const signOutFailure = function () {
   $('#uiFeedback').text('Failed signing out!')
   $('#uiFeedback').css('color', 'red')
 }
+
+// on document ready, hide `.signed-in-content` <div>
+$(() => {
+  $('.signed-in-content').hide()
+})
 
 module.exports = {
   signUpSuccess,
