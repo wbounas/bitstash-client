@@ -58,7 +58,8 @@ const onUpdateFile = function (event) {
   // console.log('this:', this)
 
   const searchObject = {}
-  searchObject.id = $('.update-file-btn').data('file-id')
+  searchObject.id = $(this).data('file-id')
+  console.log('searchObject.id is:', searchObject.id)
   const fileData = searchForFile(searchObject)
   // console.log('this is the fileData', fileData)
   // console.log('store files:', store.files)
