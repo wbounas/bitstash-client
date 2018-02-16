@@ -9,3 +9,6 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Token token=${TOKEN}"
 
 echo
+
+# COMMAND LINE
+# TOKEN="kjhdfghkljdgkjhl" ID="5fgsfgjdghj" sh scripts/files/destroy.sh
