@@ -43,7 +43,7 @@ const updateFileFailure = function (error) {
 }
 
 const deleteFileSuccess = function (data) {
-  console.log(data)
+  console.log('File was successfully deleted.')
 }
 
 const deleteFileFailure = function (error) {

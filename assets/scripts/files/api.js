@@ -53,12 +53,11 @@ const updateFile = function (data) {
 
 const deleteFile = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/files/' + data.file.id,
+    url: config.apiOrigin + '/files/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 }
 

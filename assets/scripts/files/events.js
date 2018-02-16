@@ -72,9 +72,26 @@ const onUpdateFile = function (event) {
 
 const onDeleteFile = function (event) {
   event.preventDefault()
+  const deleteFileId = $(this).data('file-id')
+  console.log('This is the id: ', deleteFileId)
   // console.log('this is the event.target', event.target)
-  const data = getFormFields(event.target)
-  api.deleteFile(data)
+  // const data = getFormFields(event.target)
+  $(this).closest('tr').remove()
+  const itemToDelete = function (fileId) {
+    let foundObject
+    store.files.find(element => {
+      if (element.id === fileId) {
+        console.log('found the file:', element)
+        foundObject = element
+      }
+    })
+    const indexOfFile = store.files.indexOf(foundObject)
+    store.files.splice(indexOfFile, 1)
+  }
+  console.log(itemToDelete(deleteFileId))
+  console.log('This is the entire store: ', store)
+  // console.log($(this).closest('tr'))
+  api.deleteFile(deleteFileId)
     .then(ui.deleteFileSuccess)
     .catch(ui.deleteFileFailure)
 }
@@ -82,6 +99,7 @@ const onDeleteFile = function (event) {
 const addHandlers = function () {
   $('#multipart-form-data').on('submit', onCreateFile)
   $('#files-display-container').on('click', '.update-file-btn', onUpdateFile)
+  $('#files-display-container').on('click', '.remove-file-btn', onDeleteFile)
 }
 
 module.exports = {
