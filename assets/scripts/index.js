@@ -9,6 +9,7 @@ $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
   fileEvents.addHandlers()
+  $('#sign-in-email').focus()
 })
 
 // use require with a reference to bundle the file and use it in this file
