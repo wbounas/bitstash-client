@@ -36,7 +36,9 @@ const getOneFileFailure = function (error) {
 
 const updateFileSuccess = function (data) {
   console.log('File updated!! Here\'s what we got:', data)
+  $('#name-' + data.file.id).html($('#' + data.file.id).val())
   $('#' + data.file.id).val('')
+  // console.log('data.file.file_name is:', data.file.file_name)
 }
 
 const updateFileFailure = function (error) {
