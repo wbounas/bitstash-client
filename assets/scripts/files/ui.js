@@ -2,11 +2,14 @@
 
 const store = require('../store')
 const indexFiles = require('../templates/index-files.handlebars')
+const showFile = require('../templates/show-file.handlebars')
 
 const createFileSuccess = function (data) {
   $('#uiFeedback').text('Uploaded file!')
   $('#uiFeedback').css('color', 'green')
   console.log('JSON from succesful AJAX:', data)
+  const singleFileHTML = showFile({ file: data.file })
+  $('#files-table tbody').prepend(singleFileHTML)
 }
 
 const createFileFailure = function () {
