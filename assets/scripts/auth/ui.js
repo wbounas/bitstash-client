@@ -62,6 +62,8 @@ const signOutSuccess = function () {
   // $('.game-search').addClass('hide')
   // $('.games-search').addClass('hide')
   store.user = null
+  store.files = null
+  $('#files-display-container').empty()
   $('.signed-in-content').hide()
   $('.landing-content').show()
   // this removes the user-id from the hidden field in upload form.
