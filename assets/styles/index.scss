@@ -6,6 +6,15 @@ body {
   padding: 0;
 }
 
+.download-btn {
+  background: #fff;
+  border: 1px solid #999;
+  color: #444;
+  display: inline-block;
+  margin: auto 0;
+  padding: 5px 12px;
+}
+
 .flex-container {
   align-items: center;
   display: flex;

@@ -44,7 +44,7 @@
                 <form id="sign-in" class="logged-out">
                   <fieldset>
                     <legend>Sign in!</legend>
-                    <div><input type="text" name="credentials[email]" placeholder="Enter Email"></div>
+                    <div><input type="text" name="credentials[email]" placeholder="Enter Email" id="sign-in-email"></div>
                     <div><input type="password" name="credentials[password]" placeholder="Enter Password"></div>
                     <div><input type="submit" name="submit" value="Sign in!"></div>
                   </fieldset>
@@ -70,18 +70,15 @@
             </form>
 
           <div class="uiFeedback"></div>
-
             <form id="multipart-form-data" enctype="multipart/form-data">
               <fieldset>
-                <legend>enctype="multipart/form-data"</legend>
                 <label>
                   Name
-                  <input type="text" name="file[name]">
+                  <input type="text" name="file[name]" id="file-name-input">
                 </label>
                 <input type="hidden" name="user[_id]" value="" id="hidden-user-id">
                 <label>
-                  Image
-                  <input type="file" name="file[path]">
+                  <input type="file" name="file[path]" id="upload-file-path">
                 </label>
                 <input type="submit" name="submit" value="Upload">
               </fieldset>
