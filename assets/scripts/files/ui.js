@@ -4,7 +4,6 @@ const store = require('../store')
 const indexFiles = require('../templates/index-files.handlebars')
 const showFile = require('../templates/show-file.handlebars')
 
-
 const userMessageBox = function (xField, xText, xColor) {
   $(xField).text(xText)
   $(xField).css('color', xColor)
@@ -14,12 +13,16 @@ const userMessageBox = function (xField, xText, xColor) {
 }
 
 const createFileSuccess = function (data) {
-  userMessageBox('.uiFeedback', 'Uploaded File!', 'green')
-  console.log('JSON from succesful AJAX:', data)
-  store.files.push(data.file)
-  const singleFileHTML = showFile({ file: data.file })
-  $('#files-table tbody').prepend(singleFileHTML)
-  // file-name-input
+  if (data.special_message) {
+    userMessageBox('.uiFeedback', data.special_message, 'red')
+  } else {
+    userMessageBox('.uiFeedback', 'Uploaded File!', 'green')
+    console.log('JSON from succesful AJAX:', data)
+    store.files.push(data.file)
+    const singleFileHTML = showFile({ file: data.file })
+    $('#files-table tbody').prepend(singleFileHTML)
+    // file-name-input
+  }
   $('#file-name-input').val('')
   $('#upload-file-path').val('')
 }
