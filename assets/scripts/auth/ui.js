@@ -64,6 +64,8 @@ const signOutSuccess = function () {
   store.user = null
   $('.signed-in-content').hide()
   $('.landing-content').show()
+  // this removes the user-id from the hidden field in upload form.
+  $('#hidden-user-id').attr('value', '')
 }
 
 const signOutFailure = function () {
