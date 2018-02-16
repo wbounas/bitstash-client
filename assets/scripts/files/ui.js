@@ -8,6 +8,7 @@ const createFileSuccess = function (data) {
   $('#uiFeedback').text('Uploaded file!')
   $('#uiFeedback').css('color', 'green')
   console.log('JSON from succesful AJAX:', data)
+  store.files.push(data.file)
   const singleFileHTML = showFile({ file: data.file })
   $('#files-table tbody').prepend(singleFileHTML)
 }
