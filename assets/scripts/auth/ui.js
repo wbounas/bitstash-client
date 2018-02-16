@@ -1,23 +1,21 @@
 'use strict'
 
+const filesUi = require('../files/ui')
 const store = require('../store')
 
 const signUpSuccess = function (data) {
   // console.log(data)
-  $('.uiFeedback').text('Successfully signed up!')
-  $('.uiFeedback').css('color', 'green')
+  filesUi.userMessageBox('.uiFeedback', 'Successfully signed up!', 'green')
 }
 
 const signUpFailure = function (data) {
   // console.error(error)
-  $('.uiFeedback').text('Sign up failed!')
-  $('.uiFeedback').css('color', 'red')
+  filesUi.userMessageBox('.uiFeedback', 'Sign up failed!', 'red')
 }
 
 const signInSuccess = function (data) {
   // console.log(data)
-  $('.uiFeedback').text('Successfully signed in!')
-  $('.uiFeedback').css('color', 'green')
+  filesUi.userMessageBox('.uiFeedback', 'Successfully signed in!', 'green')
   // $('.logged-in').removeClass('hide')
   // $('.game-functionality').removeClass('hide')
   // $('.logged-out').addClass('hide')
