@@ -2,8 +2,11 @@
   <td data-name="{{file.file_name}}" id="name-{{file.id}}"> {{file.file_name}} </td>
   <td data-type="{{file.file_type}}"> {{file.file_type}} </td>
   <td data-size="{{file.file_size}}"> {{file.file_size}} </td>
-  <td data-url="{{file.url}}"> {{file.url}} </td>
   <td data-tags="{{file.tags}}"> {{file.tags}} </td>
+  <td data-url="{{file.url}}">
+    <a class="download-btn" href="{{file.url}}" target="_blank">View</a>
+    <a class="download-btn" href="{{file.url}}" download>Download</a>
+  </td>
   <td>
     <button type="button" class="btn btn-warning update-file-btn" data-file-id="{{file.id}}"> Update </button>
     <input type="text" name="file[name]" placeholder="New Name Here" id="{{file.id}}">
