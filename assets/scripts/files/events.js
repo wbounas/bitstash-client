@@ -63,6 +63,9 @@ const onUpdateFile = function (event) {
   const fileData = searchForFile(searchObject)
   // console.log('this is the fileData', fileData)
   // console.log('store files:', store.files)
+
+  // This the new name for the file
+  fileData.file_name = $('#' + searchObject.id).val()
   console.log('fileData:', fileData)
 
   api.updateFile(fileData)
