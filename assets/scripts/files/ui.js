@@ -17,7 +17,7 @@ const createFileSuccess = function (data) {
     userMessageBox('.uiFeedback', data.special_message, 'red')
   } else {
     userMessageBox('.uiFeedback', 'Uploaded File!', 'green')
-    console.log('JSON from succesful AJAX:', data)
+    // console.log('JSON from succesful AJAX:', data)
     store.files.push(data.file)
     const singleFileHTML = showFile({ file: data.file })
     $('#files-table tbody').prepend(singleFileHTML)
@@ -34,45 +34,45 @@ const createFileFailure = function () {
 const getAllFilesSuccess = function (data) {
   // save all files from the request to the local store
   store.files = data.files
-  console.log('getAllFilesSuccess data is:', data)
+  // console.log('getAllFilesSuccess data is:', data)
   const indexFilesHTML = indexFiles({ files: data.files })
   $('#files-display-container').html(indexFilesHTML)
 }
 
-const getAllFilesFailure = function (error) {
+const getAllFilesFailure = function (data) {
   userMessageBox('.uiFeedback', 'Error loading user files', 'red')
-  console.log(error)
-}
-
-const getOneFileSuccess = function (data) {
-  // console.log(data)
-}
-
-const getOneFileFailure = function (error) {
   // console.log(error)
 }
 
+// const getOneFileSuccess = function (data) {
+//   // console.log(data)
+// }
+//
+// const getOneFileFailure = function (error) {
+//   // console.log(error)
+// }
+
 const updateFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File changed!', 'green')
-  console.log('File updated!! Here\'s what we got:', data)
+  // console.log('File updated!! Here\'s what we got:', data)
   $('#name-' + data.file.id).html($('#' + data.file.id).val())
   $('#' + data.file.id).val('')
   // console.log('data.file.file_name is:', data.file.file_name)
 }
 
-const updateFileFailure = function (error) {
+const updateFileFailure = function (data) {
   userMessageBox('.uiFeedback', 'Error updating file', 'red')
-  console.log(error)
+  // console.log(error)
 }
 
 const deleteFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File was successfully deleted.', 'green')
-  console.log('File was successfully deleted.')
+  // console.log('File was successfully deleted.')
 }
 
-const deleteFileFailure = function (error) {
+const deleteFileFailure = function (data) {
   userMessageBox('.uiFeedback', 'Error deleting file', 'red')
-  console.log(error)
+  // console.log(error)
 }
 
 module.exports = {
@@ -81,8 +81,8 @@ module.exports = {
   createFileFailure,
   getAllFilesSuccess,
   getAllFilesFailure,
-  getOneFileSuccess,
-  getOneFileFailure,
+  // getOneFileSuccess,
+  // getOneFileFailure,
   updateFileSuccess,
   updateFileFailure,
   deleteFileSuccess,

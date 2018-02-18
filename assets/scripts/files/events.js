@@ -12,10 +12,10 @@ const onCreateFile = function (event) {
   const data = new FormData(event.target)
   // data.user = store.user
   // const data = getFormFields(event.target)
-  console.log('store.user:', store.user)
-  console.log('this is data: ', data)
-  console.log('The data is ', data.get('file[path]'))
-  console.log('The data.user is ', data.get('user[_id]'))
+  // console.log('store.user:', store.user)
+  // console.log('this is data: ', data)
+  // console.log('The data is ', data.get('file[path]'))
+  // console.log('The data.user is ', data.get('user[_id]'))
   api.createFile(data) // data is empty object :(((
   // api.createFile(data.get('file[path]'))
     .then(ui.createFileSuccess)
@@ -44,7 +44,7 @@ const searchForFile = function (fileDataObj) {
   let foundObject
   store.files.find(element => {
     if (element.id === fileDataObj.id) {
-      console.log('found the file:', element)
+      // console.log('found the file:', element)
       foundObject = element
     }
   })
@@ -59,7 +59,7 @@ const onUpdateFile = function (event) {
 
   const searchObject = {}
   searchObject.id = $(this).data('file-id')
-  console.log('searchObject.id is:', searchObject.id) // the searchObject.id is the id of the search input
+  // console.log('searchObject.id is:', searchObject.id) // the searchObject.id is the id of the search input
   const fileData = searchForFile(searchObject)
   // console.log('this is the fileData', fileData)
   // console.log('store files:', store.files)
@@ -74,13 +74,13 @@ const onUpdateFile = function (event) {
     event.preventDefault()
     ui.userMessageBox('.uiFeedback', 'Please provide a new name!', 'red')
   }
-  console.log('the fileData after assignment is:', fileData)
+  // console.log('the fileData after assignment is:', fileData)
 }
 
 const onDeleteFile = function (event) {
   event.preventDefault()
   const deleteFileId = $(this).data('file-id')
-  console.log('This is the id: ', deleteFileId)
+  // console.log('This is the id: ', deleteFileId)
   // console.log('this is the event.target', event.target)
   // const data = getFormFields(event.target)
   $(this).closest('tr').remove()
@@ -88,15 +88,15 @@ const onDeleteFile = function (event) {
     let foundObject
     store.files.find(element => {
       if (element.id === fileId) {
-        console.log('found the file:', element)
+        // console.log('found the file:', element)
         foundObject = element
       }
     })
     const indexOfFile = store.files.indexOf(foundObject)
     store.files.splice(indexOfFile, 1)
   }
-  console.log(itemToDelete(deleteFileId))
-  console.log('This is the entire store: ', store)
+  // console.log(itemToDelete(deleteFileId))
+  // console.log('This is the entire store: ', store)
   // console.log($(this).closest('tr'))
   api.deleteFile(deleteFileId)
     .then(ui.deleteFileSuccess)
