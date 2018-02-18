@@ -23,9 +23,9 @@ const signInSuccess = function (data) {
 
   // set hidden user._id attribute to send with form data to API
   $('#hidden-user-id').attr('value', store.user._id)
-
   console.log('the stored user.id', store.user._id)
   console.log('the stored user token is:', store.user.token)
+  $('#user-email-id').text(store.user.email)
   $('.landing-content').hide()
   $('.signed-in-content').show()
   return store.user

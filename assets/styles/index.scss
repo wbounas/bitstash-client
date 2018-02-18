@@ -2,19 +2,23 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Cantarell|Oswald:400,600');
 
-/*
-  GOOGLE FONT PAIRING
-font-family: 'Cantarell', sans-serif;
-font-family: 'Oswald', sans-serif;
-*/
+//   GOOGLE FONT PAIRING
+// font-family: 'Cantarell', sans-serif;
+// font-family: 'Oswald', sans-serif;
 
-
-  // COLOR PALLET
+// COLOR PALLET
 //  #98ce00;
 
 $neonlime: #ccff00;
 $nickel: #788585;
 $soot: #2d3047;
+
+#app-name {
+
+  &:hover {
+    color: $neonlime;
+  }
+}
 
 body {
   font-family: 'Cantarell', sans-serif;
@@ -133,5 +137,15 @@ main {
 }
 
 #sign-in {
+  float: left;
+}
+
+#user-email-id {
+  color: #fff;
+  margin: 0 20px;
+}
+
+.user-meta {
+  display: inline-flex;
   float: left;
 }

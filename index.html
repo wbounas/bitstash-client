@@ -14,15 +14,17 @@
     <body>
       <header>
         <nav class="navbar navbar-inverse flex-container"> <!-- navbar-default -->
-          <div class="signed-in-content">
+          <div class="signed-in-content user-meta">
+            <span id="user-email-id">
+            </span>
             <form id="sign-out" class="logged-in">
               <fieldset>
-                <legend>Sign Out</legend>
+                <!-- <legend>Sign Out</legend> -->
                 <input type="submit" name="submit" value="Sign Out">
               </fieldset>
             </form>
           </div>
-              <a class="navbar-brand navbar-nav navbar-collapse flex-item" href="#">
+              <a id="app-name" class="navbar-brand navbar-nav navbar-collapse flex-item">
                 BitStash
               </a>
         </nav>
