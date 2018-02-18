@@ -66,6 +66,8 @@ const signOutSuccess = function () {
   $('.landing-content').show()
   // this removes the user-id from the hidden field in upload form.
   $('#hidden-user-id').attr('value', '')
+  $('#file-name-input').val('')
+  $('#upload-file-path').val('')
 }
 
 const signOutFailure = function () {
