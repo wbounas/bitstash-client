@@ -51,8 +51,9 @@ const changePasswordFailure = function (data) {
 
 const signOutSuccess = function () {
   // console.log('Signed out!')
-  $('.uiFeedback').text('Signed out!')
-  $('.uiFeedback').css('color', 'green')
+  filesUi.userMessageBox('.uiFeedback', 'Signed out!', 'green')
+  // $('.uiFeedback').text('Signed out!')
+  // $('.uiFeedback').css('color', 'green')
   // $('.logged-in').addClass('hide')
   // $('.game-functionality').addClass('hide')
   // $('.game-board').addClass('hide')
