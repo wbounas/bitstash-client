@@ -59,18 +59,22 @@ const onUpdateFile = function (event) {
 
   const searchObject = {}
   searchObject.id = $(this).data('file-id')
-  console.log('searchObject.id is:', searchObject.id)
+  console.log('searchObject.id is:', searchObject.id) // the searchObject.id is the id of the search input
   const fileData = searchForFile(searchObject)
   // console.log('this is the fileData', fileData)
   // console.log('store files:', store.files)
 
   // This the new name for the file
-  fileData.file_name = $('#' + searchObject.id).val()
-  console.log('fileData:', fileData)
-
-  api.updateFile(fileData)
-    .then(ui.updateFileSuccess)
-    .catch(ui.updateFileFailure)
+  if ($('#' + searchObject.id).val()) {
+    fileData.file_name = $('#' + searchObject.id).val()
+    api.updateFile(fileData)
+      .then(ui.updateFileSuccess)
+      .catch(ui.updateFileFailure)
+  } else {
+    event.preventDefault()
+    ui.userMessageBox('.uiFeedback', 'Please provide a new name!', 'red')
+  }
+  console.log('the fileData after assignment is:', fileData)
 }
 
 const onDeleteFile = function (event) {
