@@ -1,7 +1,24 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Oswald:400,600');
+
+/*
+  GOOGLE FONT PAIRING
+font-family: 'Cantarell', sans-serif;
+font-family: 'Oswald', sans-serif;
+*/
+
+
+  // COLOR PALLET
+//  #98ce00;
+
+$neonlime: #ccff00;
+$nickel: #788585;
+$soot: #2d3047;
 
 body {
+  font-family: 'Cantarell', sans-serif;
+  font-size: 18px;
   margin: 0;
   padding: 0;
 }
@@ -30,8 +47,45 @@ body {
   text-align: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+}
+
+.landing-text {
+  color: $soot;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  text-align: justify;
+
+  h1 {
+    font-size: 5.5em;
+    margin-bottom: 60px;
+  }
+
+  span {
+    font-size: 1.3em;
+    line-height: 6px;
+  }
+}
+
+main {
+  background: linear-gradient(lighten($nickel, 15%), #fff);
+}
+
 .navbar {
+  background: $soot;
+  border-radius: 0px;
+
+  a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    margin: 12px;
+}
+
   .navbar-brand {
+    color: $neonlime;
+    float: none;
     text-align: center;
   }
 
@@ -42,14 +96,41 @@ body {
   }
 }
 
-.row {
-  width: 100%;
+.jumbotron {
+  background: none;
+
+  input {
+    margin: 4px;
+    padding: 12px;
+  }
+
+  fieldset {
+    :last-child {
+      background: $neonlime;
+      border-style: none;
+      box-shadow: 1px 1px 3px $nickel;
+
+      &:hover {
+        box-shadow: 1px 1px 1px darken($nickel, 25%);
+        // color: #fff;
+      }
+    }
+  }
 }
 
 .landing-content {
   margin-top: 60px;
 }
 
-.landing-text {
-  margin-bottom: 20px;
+.row {
+  width: 100%;
+}
+
+.uiFeedback {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#sign-in {
+  float: left;
 }

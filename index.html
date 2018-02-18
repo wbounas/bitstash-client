@@ -13,44 +13,48 @@
     </head>
     <body>
       <header>
-        <nav class="navbar navbar-inverse flex-container" style="border-radius: 0;"> <!-- navbar-default -->
-          <div class="container-fluid row">
-
+        <nav class="navbar navbar-inverse flex-container"> <!-- navbar-default -->
+          <div class="signed-in-content">
+            <form id="sign-out" class="logged-in">
+              <fieldset>
+                <legend>Sign Out</legend>
+                <input type="submit" name="submit" value="Sign Out">
+              </fieldset>
+            </form>
+          </div>
               <a class="navbar-brand navbar-nav navbar-collapse flex-item" href="#">
                 BitStash
               </a>
-
-          </div>
         </nav>
       </header>
       <main>
         <div class="container">
           <div class="jumbotron landing-content">
-            <div class="landing-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <div class="uiFeedback"></div>
+            <div class="landing-text flow-text"><h1><span>"</span>STASHING <BR>YOUR IMPORTANT <BR> BITS &amp; BYTES<span>"</span></h1></div>
             <div class="row">
               <div class="col-md-6 flex-container">
-                <form id="sign-up" class="logged-out">
+                <form id="sign-in" class="logged-out">
                   <fieldset>
-                    <legend>Sign up!</legend>
-                    <div><input type="text" name="credentials[email]" placeholder="Enter Email"></div>
-                    <div><input type="password" name="credentials[password]" placeholder="Enter Password"></div>
-                    <div><input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"></div>
-                    <div><input type="submit" name="submit" value="Sign up!"></div>
+                    <!-- <legend>Sign in!</legend> -->
+                    <input type="text" name="credentials[email]" placeholder="Enter Email" id="sign-in-email"><br>
+                    <input type="password" name="credentials[password]" placeholder="Enter Password"><br>
+                    <input type="submit" name="submit" value="Sign in">
                   </fieldset>
                 </form>
               </div>
               <div class="col-md-6 flex-container">
-                <form id="sign-in" class="logged-out">
+                <form id="sign-up" class="logged-out">
                   <fieldset>
-                    <legend>Sign in!</legend>
-                    <div><input type="text" name="credentials[email]" placeholder="Enter Email" id="sign-in-email"></div>
-                    <div><input type="password" name="credentials[password]" placeholder="Enter Password"></div>
-                    <div><input type="submit" name="submit" value="Sign in!"></div>
+                    <!-- <legend>Sign up!</legend> -->
+                    <input type="text" name="credentials[email]" placeholder="Enter Email"> <br>
+                    <input type="password" name="credentials[password]" placeholder="Enter Password"> <br>
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"> <br>
+                    <input type="submit" name="submit" value="Sign up">
                   </fieldset>
                 </form>
               </div>
             </div>
+            <div class="uiFeedback"></div>
           </div>
 
           <div class="signed-in-content">
@@ -62,13 +66,6 @@
                 <input type="submit" name="submit" value="Change Password">
               </fieldset>
             </form>
-            <form id="sign-out" class="logged-in">
-              <fieldset>
-                <legend>Sign Out</legend>
-                <input type="submit" name="submit" value="Sign Out">
-              </fieldset>
-            </form>
-
           <div class="uiFeedback"></div>
             <form id="multipart-form-data" enctype="multipart/form-data">
               <fieldset>

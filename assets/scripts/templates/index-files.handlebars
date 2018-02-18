@@ -22,10 +22,10 @@
       <a class="download-btn" href="{{file.url}}" download>Download</a>
     </td>
     <td>
-      <button type="button" class="btn btn-warning update-file-btn" data-file-id="{{file.id}}"> Update </button>
+      <button type="button" class="btn btn-default update-file-btn" data-file-id="{{file.id}}"> Update </button>
       <input type="text" name="file[name]" placeholder="New Name Here" id="{{file.id}}">
     </td>
-    <td><button type="button" class="btn btn-danger remove-file-btn" data-file-id="{{file.id}}"> Remove </button></td>
+    <td><button type="button" class="btn btn-default remove-file-btn" data-file-id="{{file.id}}"> Remove </button></td>
   </tr>
   {{/each}}
 </tbody>
