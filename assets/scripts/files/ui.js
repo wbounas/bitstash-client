@@ -3,6 +3,7 @@
 const store = require('../store')
 const indexFiles = require('../templates/index-files.handlebars')
 const showFile = require('../templates/show-file.handlebars')
+const emptyFileList = require('../templates/empty-file-list.handlebars')
 
 const userMessageBox = function (xField, xText, xColor, xTime) {
   $(xField).text(xText)
@@ -18,9 +19,12 @@ const createFileSuccess = function (data) {
   } else {
     userMessageBox('.uiFeedback', 'Uploaded File!', '#630099')
     // console.log('JSON from succesful AJAX:', data)
+    if (store.files.length === 0) {
+      $('#files-display-container').html('')
+    }
     store.files.push(data.file)
     const singleFileHTML = showFile({ file: data.file })
-    $('#files-table tbody').prepend(singleFileHTML)
+    $('#files-display-container').prepend(singleFileHTML)
     // file-name-input
   }
   $('#file-name-input').val('')
@@ -35,8 +39,13 @@ const getAllFilesSuccess = function (data) {
   // save all files from the request to the local store
   store.files = data.files
   // console.log('getAllFilesSuccess data is:', data)
-  const indexFilesHTML = indexFiles({ files: data.files })
-  $('#files-display-container').html(indexFilesHTML)
+  if (store.files.length > 0) {
+    const indexFilesHTML = indexFiles({ files: data.files })
+    $('#files-display-container').html(indexFilesHTML)
+  } else {
+    const defaultGreeting = emptyFileList()
+    $('#files-display-container').html(defaultGreeting)
+  }
 }
 
 const getAllFilesFailure = function (data) {
@@ -63,7 +72,7 @@ const getOneFileFailure = function (error) {
 const updateFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File changed!', '#630099', 4000)
   // console.log('File updated!! Here\'s what we got:', data)
-  $('#name-' + data.file.id).html($('#' + data.file.id).val())
+  $('#name-' + data.file.id).html($('#' + data.file.id).val() + '<span class="caret"></span>')
   $('#' + data.file.id).val('')
   // console.log('data.file.file_name is:', data.file.file_name)
 }
@@ -75,6 +84,10 @@ const updateFileFailure = function (data) {
 
 const deleteFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File was successfully deleted.', '#630099', 4000)
+  if (store.files.length === 0) {
+    const defaultGreeting = emptyFileList()
+    $('#files-display-container').html(defaultGreeting)
+  }
   // console.log('File was successfully deleted.')
 }
 

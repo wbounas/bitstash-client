@@ -1,4 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Cantarell|Oswald:400,600');
 
@@ -9,9 +10,15 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // COLOR PALLET
 //  #98ce00;
 
-$neonlime: #ccff00;
+$neonlime: #cf0;
 $nickel: #788585;
 $soot: #2d3047;
+$remove-red: #d53c4c;
+$orange: #efaf00;
+
+.accordian-head-btns {
+  float: right;
+}
 
 #app-name {
 
@@ -27,6 +34,10 @@ body {
   padding: 0;
 }
 
+#change-password {
+  padding: 4px;
+}
+
 .download-btn {
   background: #fff;
   border: 1px solid #ccc;
@@ -37,9 +48,25 @@ body {
   padding: 5px 12px;
 
   &:hover {
-    background-color: #e6e6e6;
+    // background-color: #e6e6e6;
+    background-color: lighten($soot, 50%);
     color: #444;
     text-decoration: none;
+  }
+}
+
+.empty-files-msg {
+  color: $soot;
+  line-height: 6px;
+  margin-top: 120px;
+  text-align: center;
+
+  h1 {
+    font-size: 108px;
+  }
+
+  h2 {
+    margin-top: 4px;
   }
 }
 
@@ -100,11 +127,24 @@ main {
   fieldset {
     text-align: center;
   }
+
+  #upload-btn {
+    background: $neonlime;
+    border-style: none;
+    box-shadow: 1px 1px 3px $nickel;
+    padding: 0 10px;
+
+    &:hover {
+      box-shadow: 1px 1px 1px darken($nickel, 25%);
+    }
+  }
 }
 
 .navbar {
   background: $soot;
   border-radius: 0px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 
   a {
     font-family: 'Oswald', sans-serif;
@@ -122,6 +162,15 @@ main {
     display: inline-block;
     float: none;
     vertical-align: top;
+  }
+}
+
+.panel-title {
+  display: inline-block;
+  font-size: 1.4em;
+
+  p {
+    display: inline-block;
   }
 }
 
@@ -161,24 +210,16 @@ main {
   width: 100%;
 }
 
-
 .remove-file-btn {
   font-size: 18px;
 
   &:hover {
-    background-color: #efaf00;
+    background-color: lighten($remove-red, 10%);
   }
 }
 
 #sign-in {
   float: left;
-}
-
-#upload-btn {
-
-  &:hover {
-    background: $neonlime;
-  }
 }
 
 #user-email-id {
@@ -216,6 +257,10 @@ main {
 
 .update-file-btn {
   font-size: 18px;
+
+  &:hover {
+    background: lighten($orange, 20%);
+  }
 }
 
 .view-btn {
@@ -228,7 +273,7 @@ main {
   padding: 5px 12px;
 
   &:hover {
-    background-color: #e6e6e6;
+    background-color: lighten($soot, 50%);
     color: #444;
     text-decoration: none;
   }
