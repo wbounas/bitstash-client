@@ -5,17 +5,19 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   // console.log(data)
-  filesUi.userMessageBox('.uiFeedback', 'Successfully signed up!', '#630099')
+  filesUi.userMessageBox('.uiFeedback', 'Successfully signed up!', '#630099', 4000)
 }
 
 const signUpFailure = function (data) {
   // console.error(error)
-  filesUi.userMessageBox('.uiFeedback', 'Sign up failed!', '#ff21d6')
+  // filesUi.userMessageBox('.uiFeedback', 'Sign up failed!', '#ff21d6')
+  $('.uiFeedback').text('Changed password!')
+  $('.uiFeedback').css('color', '#ff21d6')
 }
 
 const signInSuccess = function (data) {
   // console.log(data)
-  filesUi.userMessageBox('.uiFeedback', 'Successfully signed in!', '#630099')
+  filesUi.userMessageBox('.uiFeedback', 'Successfully signed in!', '#630099', 4000)
   // $('.logged-in').removeClass('hide')
   // $('.game-functionality').removeClass('hide')
   // $('.logged-out').addClass('hide')
@@ -39,19 +41,21 @@ const signInFailure = function (data) {
 
 const changePasswordSuccess = function (data) {
   // console.log('Changed password!')
-  $('.uiFeedback').text('Changed password!')
-  $('.uiFeedback').css('color', '#630099')
+  filesUi.userMessageBox('.uiFeedback', 'Changed password!', '#630099', 4000)
+  // $('.uiFeedback').text('Changed password!')
+  // $('.uiFeedback').css('color', '#630099')
 }
 
 const changePasswordFailure = function (data) {
   // console.error(error)
-  $('.uiFeedback').text('Error changing password!')
-  $('.uiFeedback').css('color', '#ff21d6')
+  filesUi.userMessageBox('.uiFeedback', 'Error changing password!', '#630099', 4000)
+  // $('.uiFeedback').text('Error changing password!')
+  // $('.uiFeedback').css('color', '#ff21d6')
 }
 
 const signOutSuccess = function () {
   // console.log('Signed out!')
-  filesUi.userMessageBox('.uiFeedback', 'Signed out!', '#630099')
+  filesUi.userMessageBox('.uiFeedback', 'Signed out!', '#630099', 4000)
   // $('.uiFeedback').text('Signed out!')
   // $('.uiFeedback').css('color', '#630099')
   // $('.logged-in').addClass('hide')

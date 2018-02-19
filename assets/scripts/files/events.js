@@ -72,7 +72,8 @@ const onUpdateFile = function (event) {
       .catch(ui.updateFileFailure)
   } else {
     event.preventDefault()
-    ui.userMessageBox('.uiFeedback', 'Please provide a new name!', 'red')
+    // ui.userMessageBox('.uiFeedback', 'Please provide a new name!', 'red')
+    ui.updateFileFailure()
   }
   // console.log('the fileData after assignment is:', fileData)
 }
