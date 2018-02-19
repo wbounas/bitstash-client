@@ -150,22 +150,13 @@ main {
 }
 
 .uiFeedback {
-  margin: 0 auto;
+  height: 24px;
+  margin: 10px auto;
   text-align: center;
 }
 
 #sign-in {
   float: left;
-}
-
-.view-btn {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #444;
-  display: inline-block;
-  margin: auto 0;
-  padding: 5px 12px;
 }
 
 #user-email-id {
@@ -179,5 +170,23 @@ main {
 
   .btn-group {
     margin: 0 20px;
+  }
+}
+
+.update-file-btn {
+  font-size: 16px;
+}
+
+.view-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #444;
+  display: inline-block;
+  margin: auto 0;
+  padding: 5px 12px;
+
+  :hover {
+
   }
 }
