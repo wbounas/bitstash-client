@@ -35,6 +35,12 @@ body {
   display: inline-block;
   margin: auto 0;
   padding: 5px 12px;
+
+  &:hover {
+    background-color: #e6e6e6;
+    color: #444;
+    text-decoration: none;
+  }
 }
 
 .flex-container {
@@ -149,13 +155,41 @@ main {
   width: 100%;
 }
 
-.uiFeedback {
-  margin: 0 auto;
-  text-align: center;
+
+.remove-file-btn {
+  font-size: 18px;
+
+  &:hover {
+    background-color: #efaf00;
+  }
 }
 
 #sign-in {
   float: left;
+}
+
+#user-email-id {
+  color: #fff;
+  font-size: 1.4em;
+  margin: 0 20px;
+}
+
+.uiFeedback {
+  height: 24px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.user-meta {
+  display: inline-flex;•
+
+  .btn-group {
+    margin: 0 20px;
+  }
+}
+
+.update-file-btn {
+  font-size: 18px;
 }
 
 .view-btn {
@@ -166,18 +200,10 @@ main {
   display: inline-block;
   margin: auto 0;
   padding: 5px 12px;
-}
 
-#user-email-id {
-  color: #fff;
-  font-size: 1.4em;
-  margin: 0 20px;
-}
-
-.user-meta {
-  display: inline-flex;
-
-  .btn-group {
-    margin: 0 20px;
+  &:hover {
+    background-color: #e6e6e6;
+    color: #444;
+    text-decoration: none;
   }
 }
