@@ -20,7 +20,7 @@ const createFileSuccess = function (data) {
     // console.log('JSON from succesful AJAX:', data)
     store.files.push(data.file)
     const singleFileHTML = showFile({ file: data.file })
-    $('#files-table tbody').prepend(singleFileHTML)
+    $('#files-display-container').prepend(singleFileHTML)
     // file-name-input
   }
   $('#file-name-input').val('')

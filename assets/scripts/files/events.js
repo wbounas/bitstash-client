@@ -84,7 +84,7 @@ const onDeleteFile = function (event) {
   // console.log('This is the id: ', deleteFileId)
   // console.log('this is the event.target', event.target)
   // const data = getFormFields(event.target)
-  $(this).closest('tr').remove()
+  $('container-' + deleteFileId).remove()
   const itemToDelete = function (fileId) {
     let foundObject
     store.files.find(element => {
@@ -100,6 +100,7 @@ const onDeleteFile = function (event) {
   // console.log('This is the entire store: ', store)
   // console.log($(this).closest('tr'))
   api.deleteFile(deleteFileId)
+    .then(itemToDelete(deleteFileId))
     .then(ui.deleteFileSuccess)
     .catch(ui.deleteFileFailure)
 }
