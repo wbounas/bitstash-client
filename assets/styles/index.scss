@@ -91,6 +91,12 @@ main {
 #multipart-form-data {
   margin: 40px auto;
 
+  input {
+    border: 1px solid #888;
+    border-radius: 4px;
+    padding: 4px;
+  }
+
   fieldset {
     text-align: center;
   }
@@ -168,6 +174,13 @@ main {
   float: left;
 }
 
+#upload-btn {
+
+  &:hover {
+    background: $neonlime;
+  }
+}
+
 #user-email-id {
   color: #fff;
   font-size: 1.4em;
@@ -181,10 +194,23 @@ main {
 }
 
 .user-meta {
-  display: inline-flex;•
+  display: inline-flex;
+  justify-content: flex-start;
 
   .btn-group {
     margin: 0 20px;
+  }
+
+  input {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #444;
+    padding: 4px;
+
+    &:hover {
+      background: #ccc;
+    }
   }
 }
 

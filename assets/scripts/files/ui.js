@@ -14,7 +14,7 @@ const userMessageBox = function (xField, xText, xColor, xTime) {
 
 const createFileSuccess = function (data) {
   if (data.special_message) {
-    userMessageBox('.uiFeedback', data.special_message, '#ff21d6', 4000)
+    userMessageBox('.uiFeedback', data.special_message, '#bf6d20', 4000)
   } else {
     userMessageBox('.uiFeedback', 'Uploaded File!', '#630099')
     // console.log('JSON from succesful AJAX:', data)
@@ -28,7 +28,7 @@ const createFileSuccess = function (data) {
 }
 
 const createFileFailure = function () {
-  userMessageBox('.uiFeedback', 'File upload failed!', '#ff21d6', 6000)
+  userMessageBox('.uiFeedback', 'File upload failed!', '#bf6d20', 6000)
 }
 
 const getAllFilesSuccess = function (data) {
@@ -40,7 +40,7 @@ const getAllFilesSuccess = function (data) {
 }
 
 const getAllFilesFailure = function (data) {
-  userMessageBox('.uiFeedback', 'Error loading user files', '#ff21d6', 6000)
+  userMessageBox('.uiFeedback', 'Error loading user files', '#bf6d20', 6000)
   // console.log(error)
 }
 
@@ -69,7 +69,7 @@ const updateFileSuccess = function (data) {
 }
 
 const updateFileFailure = function (data) {
-  userMessageBox('.uiFeedback', 'Error updating file', '#ff21d6', 6000)
+  userMessageBox('.uiFeedback', 'Error updating file', '#bf6d20', 6000)
   // console.log(error)
 }
 
@@ -79,7 +79,7 @@ const deleteFileSuccess = function (data) {
 }
 
 const deleteFileFailure = function (data) {
-  userMessageBox('.uiFeedback', 'Error deleting file', '#ff21d6', 6000)
+  userMessageBox('.uiFeedback', 'Error deleting file', '#bf6d20', 6000)
   // console.log(error)
 }
 

@@ -10,9 +10,9 @@ const signUpSuccess = function (data) {
 
 const signUpFailure = function (data) {
   // console.error(error)
-  // filesUi.userMessageBox('.uiFeedback', 'Sign up failed!', '#ff21d6')
+  // filesUi.userMessageBox('.uiFeedback', 'Sign up failed!', '#bf6d20')
   $('.uiFeedback').text('Sign up failed!')
-  $('.uiFeedback').css('color', '#ff21d6')
+  $('.uiFeedback').css('color', '#bf6d20')
 }
 
 const signInSuccess = function (data) {
@@ -36,7 +36,7 @@ const signInSuccess = function (data) {
 const signInFailure = function (data) {
   // console.error(error)
   $('.uiFeedback').text('Sign in failed!')
-  $('.uiFeedback').css('color', '#ff21d6')
+  $('.uiFeedback').css('color', '#bf6d20')
 }
 
 const changePasswordSuccess = function (data) {
@@ -50,7 +50,7 @@ const changePasswordFailure = function (data) {
   // console.error(error)
   filesUi.userMessageBox('.uiFeedback', 'Error changing password!', '#630099', 6000)
   // $('.uiFeedback').text('Error changing password!')
-  // $('.uiFeedback').css('color', '#ff21d6')
+  // $('.uiFeedback').css('color', '#bf6d20')
 }
 
 const signOutSuccess = function () {
@@ -77,7 +77,7 @@ const signOutSuccess = function () {
 
 const signOutFailure = function () {
   $('.uiFeedback').text('Failed signing out!')
-  $('.uiFeedback').css('color', '#ff21d6')
+  $('.uiFeedback').css('color', '#bf6d20')
 }
 
 // on document ready, hide `.signed-in-content` <div>
