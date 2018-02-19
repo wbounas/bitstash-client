@@ -35,6 +35,12 @@ body {
   display: inline-block;
   margin: auto 0;
   padding: 5px 12px;
+
+  &:hover {
+    background-color: #e6e6e6;
+    color: #444;
+    text-decoration: none;
+  }
 }
 
 .flex-container {
@@ -149,10 +155,13 @@ main {
   width: 100%;
 }
 
-.uiFeedback {
-  height: 24px;
-  margin: 10px auto;
-  text-align: center;
+
+.remove-file-btn {
+  font-size: 18px;
+
+  &:hover {
+    background-color: #efaf00;
+  }
 }
 
 #sign-in {
@@ -165,8 +174,14 @@ main {
   margin: 0 20px;
 }
 
+.uiFeedback {
+  height: 24px;
+  margin: 10px auto;
+  text-align: center;
+}
+
 .user-meta {
-  display: inline-flex;
+  display: inline-flex;•
 
   .btn-group {
     margin: 0 20px;
@@ -174,7 +189,7 @@ main {
 }
 
 .update-file-btn {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .view-btn {
@@ -186,7 +201,9 @@ main {
   margin: auto 0;
   padding: 5px 12px;
 
-  :hover {
-
+  &:hover {
+    background-color: #e6e6e6;
+    color: #444;
+    text-decoration: none;
   }
 }
