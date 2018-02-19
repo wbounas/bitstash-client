@@ -17,7 +17,7 @@ const createFileSuccess = function (data) {
     userMessageBox('.uiFeedback', data.special_message, '#ff21d6', 4000)
   } else {
     userMessageBox('.uiFeedback', 'Uploaded File!', '#630099')
-    console.log('JSON from succesful AJAX:', data)
+    // console.log('JSON from succesful AJAX:', data)
     store.files.push(data.file)
     const singleFileHTML = showFile({ file: data.file })
     $('#files-table tbody').prepend(singleFileHTML)
@@ -39,9 +39,9 @@ const getAllFilesSuccess = function (data) {
   $('#files-display-container').html(indexFilesHTML)
 }
 
-const getAllFilesFailure = function (error) {
+const getAllFilesFailure = function (data) {
   userMessageBox('.uiFeedback', 'Error loading user files', '#ff21d6', 6000)
-  console.log(error)
+  // console.log(error)
 }
 
 const getOneFileSuccess = function (data) {
@@ -62,25 +62,25 @@ const getOneFileFailure = function (error) {
 
 const updateFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File changed!', '#630099', 4000)
-  console.log('File updated!! Here\'s what we got:', data)
+  // console.log('File updated!! Here\'s what we got:', data)
   $('#name-' + data.file.id).html($('#' + data.file.id).val())
   $('#' + data.file.id).val('')
   // console.log('data.file.file_name is:', data.file.file_name)
 }
 
-const updateFileFailure = function (error) {
+const updateFileFailure = function (data) {
   userMessageBox('.uiFeedback', 'Error updating file', '#ff21d6', 6000)
-  console.log(error)
+  // console.log(error)
 }
 
 const deleteFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File was successfully deleted.', '#630099', 4000)
-  console.log('File was successfully deleted.')
+  // console.log('File was successfully deleted.')
 }
 
-const deleteFileFailure = function (error) {
+const deleteFileFailure = function (data) {
   userMessageBox('.uiFeedback', 'Error deleting file', '#ff21d6', 6000)
-  console.log(error)
+  // console.log(error)
 }
 
 module.exports = {

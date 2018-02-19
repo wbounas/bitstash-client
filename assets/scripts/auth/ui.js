@@ -11,7 +11,7 @@ const signUpSuccess = function (data) {
 const signUpFailure = function (data) {
   // console.error(error)
   // filesUi.userMessageBox('.uiFeedback', 'Sign up failed!', '#ff21d6')
-  $('.uiFeedback').text('Changed password!')
+  $('.uiFeedback').text('Sign up failed!')
   $('.uiFeedback').css('color', '#ff21d6')
 }
 
@@ -48,7 +48,7 @@ const changePasswordSuccess = function (data) {
 
 const changePasswordFailure = function (data) {
   // console.error(error)
-  filesUi.userMessageBox('.uiFeedback', 'Error changing password!', '#630099', 4000)
+  filesUi.userMessageBox('.uiFeedback', 'Error changing password!', '#630099', 6000)
   // $('.uiFeedback').text('Error changing password!')
   // $('.uiFeedback').css('color', '#ff21d6')
 }
