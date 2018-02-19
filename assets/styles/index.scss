@@ -1,18 +1,46 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Oswald:400,600');
+
+//   GOOGLE FONT PAIRING
+// font-family: 'Cantarell', sans-serif;
+// font-family: 'Oswald', sans-serif;
+
+// COLOR PALLET
+//  #98ce00;
+
+$neonlime: #ccff00;
+$nickel: #788585;
+$soot: #2d3047;
+
+#app-name {
+
+  &:hover {
+    color: $neonlime;
+  }
+}
 
 body {
+  font-family: 'Cantarell', sans-serif;
+  font-size: 18px;
   margin: 0;
   padding: 0;
 }
 
 .download-btn {
   background: #fff;
-  border: 1px solid #999;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   color: #444;
   display: inline-block;
   margin: auto 0;
   padding: 5px 12px;
+
+  &:hover {
+    background-color: #e6e6e6;
+    color: #444;
+    text-decoration: none;
+  }
 }
 
 .flex-container {
@@ -30,8 +58,63 @@ body {
   text-align: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+}
+
+.landing-text {
+  color: $soot;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  text-align: justify;
+
+  h1 {
+    font-size: 5.5em;
+    margin-bottom: 60px;
+  }
+
+  span {
+    font-size: 1.3em;
+    line-height: 6px;
+  }
+}
+
+.landing-content {
+  // margin-top: 20px;
+}
+
+main {
+  background: linear-gradient(lighten($nickel, 15%), #fff);
+}
+
+#multipart-form-data {
+  margin: 40px auto;
+
+  input {
+    border: 1px solid #888;
+    border-radius: 4px;
+    padding: 4px;
+  }
+
+  fieldset {
+    text-align: center;
+  }
+}
+
 .navbar {
+  background: $soot;
+  border-radius: 0px;
+
+  a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    margin: 12px;
+}
+
   .navbar-brand {
+    color: $neonlime;
+    float: none;
     text-align: center;
   }
 
@@ -42,14 +125,111 @@ body {
   }
 }
 
+.jumbotron {
+  background: none;
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 6px;
+    padding: 12px;
+  }
+
+  fieldset {
+    :last-child {
+      background: $neonlime;
+      border-style: none;
+      box-shadow: 1px 1px 3px $nickel;
+      width: 94%;
+
+      &:hover {
+        box-shadow: 1px 1px 1px darken($nickel, 25%);
+        // color: #fff;
+      }
+    }
+  }
+
+  legend {
+    border-bottom: none;
+    color: $soot;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 10px;
+  }
+}
+
 .row {
   width: 100%;
 }
 
-.landing-content {
-  margin-top: 60px;
+
+.remove-file-btn {
+  font-size: 18px;
+
+  &:hover {
+    background-color: #efaf00;
+  }
 }
 
-.landing-text {
-  margin-bottom: 20px;
+#sign-in {
+  float: left;
+}
+
+#upload-btn {
+
+  &:hover {
+    background: $neonlime;
+  }
+}
+
+#user-email-id {
+  color: #fff;
+  font-size: 1.4em;
+  margin: 0 20px;
+}
+
+.uiFeedback {
+  height: 24px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.user-meta {
+  display: inline-flex;
+  justify-content: flex-start;
+
+  .btn-group {
+    margin: 0 20px;
+  }
+
+  input {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #444;
+    padding: 4px;
+
+    &:hover {
+      background: #ccc;
+    }
+  }
+}
+
+.update-file-btn {
+  font-size: 18px;
+}
+
+.view-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #444;
+  display: inline-block;
+  margin: auto 0;
+  padding: 5px 12px;
+
+  &:hover {
+    background-color: #e6e6e6;
+    color: #444;
+    text-decoration: none;
+  }
 }

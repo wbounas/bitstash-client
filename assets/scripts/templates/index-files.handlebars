@@ -1,11 +1,11 @@
 <table class="table table-striped" id="files-table">
 <thead>
   <tr>
-    <th>file_name</th>
-    <th>file_type</th>
-    <th>file_size</th>
-    <th>tags</th>
-    <th>actions</th>
+    <th>File Name</th>
+    <th>File Type</th>
+    <th>File Size (Bytes)</th>
+    <th>Tags</th>
+    <th>Actions</th>
     <th>Update</th>
     <th>Remove</th>
   </tr>
@@ -18,14 +18,14 @@
     <td data-size="{{file.file_size}}"> {{file.file_size}} </td>
     <td data-tags="{{file.tags}}"> {{file.tags}} </td>
     <td data-url="{{file.url}}">
-      <a class="download-btn" href="{{file.url}}" target="_blank">View</a>
+      <a class="view-btn" href="{{file.url}}" target="_blank">View</a>
       <a class="download-btn" href="{{file.url}}" download>Download</a>
     </td>
     <td>
-      <button type="button" class="btn btn-warning update-file-btn" data-file-id="{{file.id}}"> Update </button>
+      <button type="button" class="btn btn-default update-file-btn" data-file-id="{{file.id}}"> Update </button>
       <input type="text" name="file[name]" placeholder="New Name Here" id="{{file.id}}">
     </td>
-    <td><button type="button" class="btn btn-danger remove-file-btn" data-file-id="{{file.id}}"> Remove </button></td>
+    <td><button type="button" class="btn btn-default remove-file-btn" data-file-id="{{file.id}}"> Remove </button></td>
   </tr>
   {{/each}}
 </tbody>
