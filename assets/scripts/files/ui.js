@@ -63,7 +63,7 @@ const getOneFileFailure = function (error) {
 const updateFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File changed!', '#630099', 4000)
   // console.log('File updated!! Here\'s what we got:', data)
-  $('#name-' + data.file.id).html($('#' + data.file.id).val())
+  $('#name-' + data.file.id).html($('#' + data.file.id).val() + '<span class="caret"></span>')
   $('#' + data.file.id).val('')
   // console.log('data.file.file_name is:', data.file.file_name)
 }

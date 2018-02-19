@@ -65,8 +65,10 @@ const onUpdateFile = function (event) {
   // console.log('store files:', store.files)
 
   // This the new name for the file
-  if ($('#' + searchObject.id).val()) {
-    fileData.file_name = $('#' + searchObject.id).val()
+  const newName = $('#' + searchObject.id).val()
+  console.log('newName is:', newName)
+  if (newName) {
+    fileData.file_name = newName
     api.updateFile(fileData)
       .then(ui.updateFileSuccess)
       .catch(ui.updateFileFailure)
@@ -84,7 +86,7 @@ const onDeleteFile = function (event) {
   // console.log('This is the id: ', deleteFileId)
   // console.log('this is the event.target', event.target)
   // const data = getFormFields(event.target)
-  $('container-' + deleteFileId).remove()
+  $('#container-' + deleteFileId).remove()
   const itemToDelete = function (fileId) {
     let foundObject
     store.files.find(element => {
@@ -100,7 +102,7 @@ const onDeleteFile = function (event) {
   // console.log('This is the entire store: ', store)
   // console.log($(this).closest('tr'))
   api.deleteFile(deleteFileId)
-    .then(itemToDelete(deleteFileId))
+    .then(dummyData => itemToDelete(deleteFileId))
     .then(ui.deleteFileSuccess)
     .catch(ui.deleteFileFailure)
 }
