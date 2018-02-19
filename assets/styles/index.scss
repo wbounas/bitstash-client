@@ -55,6 +55,21 @@ body {
   }
 }
 
+.empty-files-msg {
+  color: $soot;
+  line-height: 6px;
+  margin-top: 120px;
+  text-align: center;
+
+  h1 {
+    font-size: 108px;
+  }
+
+  h2 {
+    margin-top: 4px;
+  }
+}
+
 .flex-container {
   align-items: center;
   display: flex;
@@ -111,6 +126,17 @@ main {
 
   fieldset {
     text-align: center;
+  }
+
+  #upload-btn {
+    background: $neonlime;
+    border-style: none;
+    box-shadow: 1px 1px 3px $nickel;
+    padding: 0 10px;
+
+    &:hover {
+      box-shadow: 1px 1px 1px darken($nickel, 25%);
+    }
   }
 }
 
@@ -192,13 +218,6 @@ main {
 
 #sign-in {
   float: left;
-}
-
-#upload-btn {
-
-  &:hover {
-    background: $neonlime;
-  }
 }
 
 #user-email-id {
