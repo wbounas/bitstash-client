@@ -17,6 +17,20 @@
           <div class="signed-in-content user-meta">
             <span id="user-email-id">
             </span>
+            <!-- Single button -->
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Settings <span class="caret"></span>
+                </button>
+                <form id="change-password" class="logged-in dropdown-menu">
+                  <!-- <fieldset> -->
+                    <!-- <legend>Change Password</legend> -->
+                    <input type="password" name="passwords[old]" placeholder="Old Password">
+                    <input type="password" name="passwords[new]" placeholder="New Password">
+                    <input type="submit" name="submit" value="Change Password">
+                  <!-- </fieldset> -->
+                </form>
+              </div>
             <form id="sign-out" class="logged-in">
               <fieldset>
                 <!-- <legend>Sign Out</legend> -->
@@ -60,14 +74,6 @@
           </div>
 
           <div class="signed-in-content">
-            <form id="change-password" class="logged-in">
-              <fieldset>
-                <legend>Change Password</legend>
-                <input type="password" name="passwords[old]" placeholder="Old Password">
-                <input type="password" name="passwords[new]" placeholder="New Password">
-                <input type="submit" name="submit" value="Change Password">
-              </fieldset>
-            </form>
           <div class="uiFeedback"></div>
             <form id="multipart-form-data" enctype="multipart/form-data">
               <fieldset>

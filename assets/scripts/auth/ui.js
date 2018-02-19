@@ -5,17 +5,17 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   // console.log(data)
-  filesUi.userMessageBox('.uiFeedback', 'Successfully signed up!', 'green')
+  filesUi.userMessageBox('.uiFeedback', 'Successfully signed up!', '#630099')
 }
 
 const signUpFailure = function (data) {
   // console.error(error)
-  filesUi.userMessageBox('.uiFeedback', 'Sign up failed!', 'red')
+  filesUi.userMessageBox('.uiFeedback', 'Sign up failed!', '#ff21d6')
 }
 
 const signInSuccess = function (data) {
   // console.log(data)
-  filesUi.userMessageBox('.uiFeedback', 'Successfully signed in!', 'green')
+  filesUi.userMessageBox('.uiFeedback', 'Successfully signed in!', '#630099')
   // $('.logged-in').removeClass('hide')
   // $('.game-functionality').removeClass('hide')
   // $('.logged-out').addClass('hide')
@@ -34,26 +34,26 @@ const signInSuccess = function (data) {
 const signInFailure = function (data) {
   // console.error(error)
   $('.uiFeedback').text('Sign in failed!')
-  $('.uiFeedback').css('color', 'red')
+  $('.uiFeedback').css('color', '#ff21d6')
 }
 
 const changePasswordSuccess = function (data) {
   // console.log('Changed password!')
   $('.uiFeedback').text('Changed password!')
-  $('.uiFeedback').css('color', 'green')
+  $('.uiFeedback').css('color', '#630099')
 }
 
 const changePasswordFailure = function (data) {
   // console.error(error)
   $('.uiFeedback').text('Error changing password!')
-  $('.uiFeedback').css('color', 'red')
+  $('.uiFeedback').css('color', '#ff21d6')
 }
 
 const signOutSuccess = function () {
   // console.log('Signed out!')
-  filesUi.userMessageBox('.uiFeedback', 'Signed out!', 'green')
+  filesUi.userMessageBox('.uiFeedback', 'Signed out!', '#630099')
   // $('.uiFeedback').text('Signed out!')
-  // $('.uiFeedback').css('color', 'green')
+  // $('.uiFeedback').css('color', '#630099')
   // $('.logged-in').addClass('hide')
   // $('.game-functionality').addClass('hide')
   // $('.game-board').addClass('hide')
@@ -73,7 +73,7 @@ const signOutSuccess = function () {
 
 const signOutFailure = function () {
   $('.uiFeedback').text('Failed signing out!')
-  $('.uiFeedback').css('color', 'red')
+  $('.uiFeedback').css('color', '#ff21d6')
 }
 
 // on document ready, hide `.signed-in-content` <div>
