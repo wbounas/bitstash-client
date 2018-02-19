@@ -136,6 +136,13 @@ main {
       }
     }
   }
+
+  legend {
+    border-bottom: none;
+    color: $soot;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 10px;
+  }
 }
 
 .row {
