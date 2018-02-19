@@ -1,15 +1,26 @@
-<tr>
-  <td data-name="{{file.file_name}}" id="name-{{file.id}}"> {{file.file_name}} </td>
-  <td data-type="{{file.file_type}}"> {{file.file_type}} </td>
-  <td data-size="{{file.file_size}}"> {{file.file_size}} </td>
-  <td data-tags="{{file.tags}}"> {{file.tags}} </td>
-  <td data-url="{{file.url}}">
-    <a class="view-btn" href="{{file.url}}" target="_blank">View</a>
-    <a class="download-btn" href="{{file.url}}" download>Download</a>
-  </td>
-  <td>
-    <button type="button" class="btn btn-default update-file-btn" data-file-id="{{file.id}}"> Update </button>
-    <input type="text" name="file[name]" placeholder="New Name Here" id="{{file.id}}">
-  </td>
-  <td><button type="button" class="btn btn-default remove-file-btn" data-file-id="{{file.id}}"> Remove </button></td>
-</tr>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default ">
+        <div class="panel-heading">
+          File Name: &nbsp;
+            <h1 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#{{file.id}}">{{file.file_name}}</a>
+            </h1>
+                <span id="accordian-head-btns">
+                  <a class="view-btn" href="{{file.url}}" target="_blank">View</a>
+                  <a class="download-btn" href="{{file.url}}" download>Download</a>
+                </span>
+            <p data-type="{{file.file_type}}">File Type: &nbsp;&nbsp;<b>{{file.file_type}}</b></p>
+        </div>
+        <div id="{{file.id}}" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p data-size="{{file.file_size}}"><h4>File Size (Bytes): </h4> {{file.file_size}} </p>
+              <p data-tags="{{file.tags}}"><h4>File Tags: </h4> {{file.tags}} </p>
+              <p data-url="{{file.url}}"><h4>File URL: </h4> {{file.url}} </p>
+              <p><h4>Change Name: </h4><input type="text" name="file[name]" placeholder="New Name Here" id="{{file.id}}">
+                <button type="button" class="btn btn-default update-file-btn" data-file-id="{{file.id}}"> Update </button>
+              </p>
+              <button type="button" class="btn btn-default remove-file-btn" data-file-id="{{file.id}}"> Remove </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,10 @@ $neonlime: #ccff00;
 $nickel: #788585;
 $soot: #2d3047;
 
+#accordian-head-btns {
+  float: right;
+}
+
 #app-name {
 
   &:hover {
@@ -41,7 +45,8 @@ body {
   padding: 5px 12px;
 
   &:hover {
-    background-color: #e6e6e6;
+    // background-color: #e6e6e6;
+    background-color: lighten($soot, 50%);
     color: #444;
     text-decoration: none;
   }
@@ -126,6 +131,15 @@ main {
     display: inline-block;
     float: none;
     vertical-align: top;
+  }
+}
+
+.panel-title {
+  display: inline-block;
+  font-size: 1.4em;
+
+  p {
+    display: inline-block;
   }
 }
 
@@ -232,7 +246,7 @@ main {
   padding: 5px 12px;
 
   &:hover {
-    background-color: #e6e6e6;
+    background-color: lighten($soot, 50%);
     color: #444;
     text-decoration: none;
   }
