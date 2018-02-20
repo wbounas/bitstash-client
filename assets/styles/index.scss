@@ -21,6 +21,7 @@ $orange: #efaf00;
 }
 
 #app-name {
+  user-select: none;
 
   &:hover {
     color: $neonlime;
@@ -60,6 +61,7 @@ body {
   line-height: 6px;
   margin-top: 120px;
   text-align: center;
+  user-select: none;
 
   h1 {
     font-size: 108px;
@@ -90,11 +92,44 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+.jumbotron {
+  background: none;
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 6px;
+    padding: 12px;
+  }
+
+  fieldset {
+    :last-child {
+      background: $neonlime;
+      border-style: none;
+      box-shadow: 1px 1px 3px $nickel;
+      width: 94%;
+
+      &:hover {
+        box-shadow: 1px 1px 1px darken($nickel, 25%);
+        // color: #fff;
+      }
+    }
+  }
+
+  legend {
+    border-bottom: none;
+    color: $soot;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 10px;
+  }
+}
+
 .landing-text {
   color: $soot;
   margin-bottom: 20px;
   margin-left: 150px;
   text-align: justify;
+  user-select: none;
 
   h1 {
     font-size: 5.5em;
@@ -174,38 +209,6 @@ main {
   }
 }
 
-.jumbotron {
-  background: none;
-
-  input {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin: 6px;
-    padding: 12px;
-  }
-
-  fieldset {
-    :last-child {
-      background: $neonlime;
-      border-style: none;
-      box-shadow: 1px 1px 3px $nickel;
-      width: 94%;
-
-      &:hover {
-        box-shadow: 1px 1px 1px darken($nickel, 25%);
-        // color: #fff;
-      }
-    }
-  }
-
-  legend {
-    border-bottom: none;
-    color: $soot;
-    font-family: 'Oswald', sans-serif;
-    padding-left: 10px;
-  }
-}
-
 .row {
   width: 100%;
 }
@@ -222,16 +225,16 @@ main {
   float: left;
 }
 
-#user-email-id {
-  color: #fff;
-  font-size: 1.4em;
-  margin: 0 20px;
-}
-
 .uiFeedback {
   height: 24px;
   margin: 10px auto;
   text-align: center;
+}
+
+#user-email-id {
+  color: #fff;
+  font-size: 1.4em;
+  margin: 0 20px;
 }
 
 .user-meta {
