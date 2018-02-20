@@ -13,6 +13,13 @@ const userMessageBox = function (xField, xText, xColor, xTime) {
   }, xTime)
 }
 
+const formatDateUS = function (file, idToChange) {
+  const createdDate = new Date(file.createdAt)
+  const formatCreateDate = createdDate.toLocaleString('en-US')
+  // console.log('formatCreateDate is:', formatCreateDate)
+  $(idToChange + file.id).text(formatCreateDate)
+}
+
 const createFileSuccess = function (data) {
   if (data.special_message) {
     userMessageBox('.uiFeedback', data.special_message, '#bf6d20', 4000)
@@ -24,6 +31,7 @@ const createFileSuccess = function (data) {
     }
     store.files.push(data.file)
     const singleFileHTML = showFile({ file: data.file })
+    formatDateUS(data.file, '#created-time-')
     $('#files-display-container').prepend(singleFileHTML)
     // file-name-input
   }
@@ -42,6 +50,9 @@ const getAllFilesSuccess = function (data) {
   if (store.files.length > 0) {
     const indexFilesHTML = indexFiles({ files: data.files })
     $('#files-display-container').html(indexFilesHTML)
+    data.files.forEach(file => {
+      formatDateUS(file, '#created-time-')
+    })
   } else {
     const defaultGreeting = emptyFileList()
     $('#files-display-container').html(defaultGreeting)
@@ -53,29 +64,27 @@ const getAllFilesFailure = function (data) {
   // console.log(error)
 }
 
-const getOneFileSuccess = function (data) {
-  // console.log(data)
-}
+// const getOneFileSuccess = function (data) {
+//  console.log(data)
+// }
 
-const getOneFileFailure = function (error) {
-  // console.log(error)
-}
+// const getOneFileFailure = function () {
+//  console.log(error)
+// }
 
 // const getOneFileSuccess = function (data) {
-//   // console.log(data)
+//   console.log(data)
 // }
 //
 // const getOneFileFailure = function (error) {
-//   // console.log(error)
+//   console.log(error)
 // }
 
 const updateFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File changed!', '#630099', 4000)
   console.log('File updated!! Here\'s what we got:', data)
   $('#name-' + data.file.id).html($('#' + data.file.id).val() + '<span class="caret"></span>')
-  $('#update-time-' + data.file.id).html(data.file.updatedAt)
-  $('#' + data.file.id).val('')
-  // console.log('data.file.file_name is:', data.file.file_name)
+  formatDateUS(data.file, '#created-time-')
 }
 
 const updateFileFailure = function (data) {
@@ -110,10 +119,3 @@ module.exports = {
   deleteFileSuccess,
   deleteFileFailure
 }
-
-//
-// createFile,
-// getAllFiles,
-// getOneFile,
-// updateFile,
-// deleteFile
