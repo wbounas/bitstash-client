@@ -31,8 +31,8 @@ const createFileSuccess = function (data) {
     }
     store.files.push(data.file)
     const singleFileHTML = showFile({ file: data.file })
-    formatDateUS(data.file, '#created-time-')
     $('#files-display-container').prepend(singleFileHTML)
+    formatDateUS(data.file, '#created-time-')
     // file-name-input
   }
   $('#file-name-input').val('')
