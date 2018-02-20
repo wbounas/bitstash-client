@@ -38,7 +38,7 @@ const createFileFailure = function () {
 const getAllFilesSuccess = function (data) {
   // save all files from the request to the local store
   store.files = data.files
-  // console.log('getAllFilesSuccess data is:', data)
+  console.log('getAllFilesSuccess data is:', data)
   if (store.files.length > 0) {
     const indexFilesHTML = indexFiles({ files: data.files })
     $('#files-display-container').html(indexFilesHTML)
@@ -71,8 +71,9 @@ const getOneFileFailure = function (error) {
 
 const updateFileSuccess = function (data) {
   userMessageBox('.uiFeedback', 'File changed!', '#630099', 4000)
-  // console.log('File updated!! Here\'s what we got:', data)
+  console.log('File updated!! Here\'s what we got:', data)
   $('#name-' + data.file.id).html($('#' + data.file.id).val() + '<span class="caret"></span>')
+  $('#update-time-' + data.file.id).html(data.file.updatedAt)
   $('#' + data.file.id).val('')
   // console.log('data.file.file_name is:', data.file.file_name)
 }

@@ -17,6 +17,8 @@
               <p data-size="{{file.file_size}}"><h4>File Size (Bytes): </h4> {{file.file_size}} </p>
               <p data-tags="{{file.tags}}"><h4>File Tags: </h4> {{file.tags}} </p>
               <p data-url="{{file.url}}"><h4>File URL: </h4> {{file.url}} </p>
+              <p data-createdAt="{{file.createdAt}}"><h4>File Stored: </h4>{{file.createdAt}} </p>
+              <p data-updatedAt="{{file.updatedAt}}"><h4>File Modified: </h4><span id="update-time-{{file.id}}">{{file.updatedAt}}</span> </p>
               <p><h4>Change Name: </h4><input type="text" name="file[name]" placeholder="New Name Here" id="{{file.id}}">
                 <button type="button" class="btn btn-default update-file-btn" data-file-id="{{file.id}}"> Update </button>
               </p>
