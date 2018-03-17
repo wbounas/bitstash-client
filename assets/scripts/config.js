@@ -3,7 +3,7 @@
 const config = {
   apiOrigins: {
     development: 'http://localhost:4741',
-    production: 'https://desolate-eyrie-66077.herokuapp.com'
+    production: 'https://wb-bitstash-api.herokuapp.com'
   }
 }
 

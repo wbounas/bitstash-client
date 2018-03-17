@@ -5,12 +5,12 @@ JavaScript, jQuery, AJAX, BootStrap, HTML5, SASS + CSS3, cURL
 
 ### Project Links
 **Client (Front End) -**
-[Deployed Client](https://alkazams-shark-assassins.github.io/bitstash-client)
-| [GitHub Client Repo](https://github.com/alkazams-shark-assassins/bitstash-client)
+[Deployed Client](https://wbounas.github.io/bitstash-client)
+| [GitHub Client Repo](https://github.com/wbounas/bitstash-client)
 
 **API (Back End) -**
-[Deployed API](https://desolate-eyrie-66077.herokuapp.com)
-| [GitHub API Repo](https://github.com/alkazams-shark-assassins/bitstash-api)
+[Deployed API](https://wb-bitstash-api.herokuapp.com)
+| [GitHub API Repo](https://github.com/wbounas/bitstash-api)
 
 ### About
 BitStash is an online storage solution that allows you to upload files you have on your personal computer to a remote
